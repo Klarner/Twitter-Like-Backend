@@ -1,9 +1,7 @@
-from ast import Del
-from cgitb import handler
 from flask import request
 from backend_twitter_like_app import create_app
 from flask_restful import Resource, Api, reqparse
-from model import Users, Tweets, db, usersSchema, tweetsSchema
+from model import Users, Tweets, db
 
 app = create_app()
 app.app_context().push()

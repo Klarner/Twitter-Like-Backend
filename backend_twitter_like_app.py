@@ -1,5 +1,5 @@
 from flask import Flask
-from model import db, ma
+from model import db
 
 def create_app():
     app = Flask(__name__)
@@ -7,7 +7,6 @@ def create_app():
     app.config['SECRET_KEY'] = 'super-secret'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     db.init_app(app=app)
-    ma.init_app(app=app)
     with app.app_context():
         db.create_all()
     return app
